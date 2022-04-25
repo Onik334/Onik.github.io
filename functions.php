@@ -7,20 +7,20 @@
          
          //custom logo
 
-         add_theme_support( 'custom-logo', array(
+         add_theme_support( 'custom-logo',  array(
           'height'               => 110,
           'width'                => 180,
           'flex-height'          => true,
           'flex-width'           => true,
-          'header-text'          => array( 'site-title', 'site-description' ),
           'unlink-homepage-logo' => true, 
+          
          ));
          //nav menu
          register_nav_menus(
           array(
             'header-menu' => ( 'Header Menu' ),
             
-           )
+          )
          );
  } 
  add_action( 'after_setup_theme', 'wptd_theme_features' ); 
@@ -30,7 +30,7 @@
  function wptd_theme_css_js() {
   wp_enqueue_style( 'wptd-style', get_stylesheet_uri() ); 
 
-  wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+  wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap' );
 
   wp_enqueue_script( 'wptd-custom', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ),  false, true );
 }
@@ -44,4 +44,4 @@ function add_icon_has_submenu($classes, $menu_item, $args ) {
     }
   return $classes;
 }
-  add_filter('nav_menu_css_class', 'add_icon_item_has_submenu', 10,3);
+ 

@@ -5,10 +5,10 @@
    <meta charset="<?php bloginfo( 'charset'); ?>">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="profile" href="https://gmpg.org/xfn/11">
+ 
 
    <title>Responsive HTML Template - Single Post</title>
-
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+ 
 
    <?php wp_head(); ?>
 </head>
@@ -23,32 +23,69 @@
          <div class="container">
             <div class="site-branding">
                <?php
-               if( the_custom_logo() ){
-                  the_custom_logo();
+               if( has_custom_logo() ) {
+                 the_custom_logo();
                } else {
-                  echo '<h1 class="site-title">' . get_bloginfo( 'name') . '</h1>';
-               } 
+                  echo  '<h1 class="site-title">' . get_bloginfo( 'name') . '</h1>' ;
+               }
                 ?>
             </div>
 
             <button id="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
 
             <?php
-            //<span class="dropdown-menu-toggle"></span>
+               //<span class="dropdown-menu-toggle"></span>
                wp_nav_menu(
                   array(
-                     'theme_location'  => 'Header Menu',
-                     'container'  => 'nav',
-                     'container_class'      => 'site-navigation',
-                     'container_id'         => 'main-navigation',
+                     'theme_location'   =>  'header-menu ',
+                     'container'        => 'nav',
+                     'container_id'     => 'site-navigation',
+                     'container_class'  => 'main-navigation',
                      
                   )
                );
             ?>
 
-            
+<nav id="site-navigation" class="main-navigation">
+               <ul class="menu">
+                  <li><a href="index.html#about">About</a></li>
+                  <li class="menu-item-has-children">
+                     <a href="index.html#services">Services </a>
+                     <ul class="sub-menu">
+                        <li><a href="#">Service Item 1</a></li>
+                        <li><a href="#">Service Item 2</a></li>
+                        <li><a href="#">Service Item 3</a></li>
+                        <li><a href="#">Service Item 4</a></li>
+                        <li><a href="#">Service Item 5</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="index.html#portfolio">Portfolio</a></li>
+                  <li class="menu-item-has-children">
+                     <a href="elements.html">Elements<span class="dropdown-menu-toggle"></span></a>
+                     <ul class="sub-menu">
+                        <li><a href="elements.html#text-formatting">Text Formatting</a></li>
+                        <li class="menu-item-has-children">
+                           <a href="elements.html#table">HTML Table<span class="dropdown-menu-toggle"></span></a>
+                           <ul class="sub-menu">
+                              <li><a href="#">Sub Sub Item 1</a></li>
+                              <li><a href="#">Sub Sub Item 2</a></li>
+                              <li><a href="#">Sub Sub Item 3</a></li>
+                              <li><a href="#">Sub Sub Item 4</a></li>
+                              <li><a href="#">Sub Sub Item 5</a></li>
+                           </ul>
+                        </li>
+                        <li><a href="elements.html#iframes">HTML Iframes</a></li>
+                        <li><a href="elements.html#audio">HTML Audio</a></li>
+                        <li><a href="elements.html#video">HTML Video</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="index.html#contact">Contact</a></li>
+                  <li><a href="jquery.html">jQuery</a></li>
+               </ul>
+            </nav><!-- #site-navigation -->
+       
          </div>
-      </header><!-- #masthead -->
+</header><!-- #masthead -->
 
       <div id="content" class="site-content">
          <div class="container">
